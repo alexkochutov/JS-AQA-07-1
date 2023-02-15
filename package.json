@@ -1,0 +1,14 @@
+{
+  "name": "js-aqa-07-1",
+  "version": "1.0.0",
+  "description": "js-aqa-07-1",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress open"
+  },
+  "author": "Aleksandr Kochutov",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.5.1"
+  }
+}

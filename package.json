@@ -4,7 +4,7 @@
   "description": "js-aqa-07-1",
   "main": "index.js",
   "scripts": {
-    "test": "npx cypress open"
+    "test": "npx cypress run --record --key 3fbee1ee-6c39-4d7d-be68-bc9648f8e626"
   },
   "author": "Aleksandr Kochutov",
   "license": "ISC",

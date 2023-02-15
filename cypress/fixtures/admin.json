@@ -1,0 +1,12 @@
+[
+  {
+    "email": "qamid@qamid.ru",
+    "password": "qamid",
+    "checkElement": "Управление залами"
+  },
+  {
+    "email": "qamid@qamid.ru",
+    "password": "qwerty",
+    "checkElement": "Ошибка авторизации!"
+  }
+]

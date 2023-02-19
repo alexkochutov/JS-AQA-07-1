@@ -1,5 +1,6 @@
 {
     "emailField": "input.login__input[type='email']",
     "passwordField": "input.login__input[type='password']",
-    "submitButton": "input.login__button[type='submit']"
+    "submitButton": "input.login__button[type='submit']",
+    "movieName": ".conf-step__movie:nth-child(2) > h3"
 }

@@ -1,14 +1,24 @@
 describe('provides access to admin page', () => {
-    const controls = require('../fixtures/adminPage')
     const creds = require('../fixtures/admin')
+    const adminPage = require('../fixtures/adminPage')
+    const userPage = require('../fixtures/userPage')
+    const seats = require('../fixtures/seats')    
 
     it('authorize with valid credentials', () => {
         cy.visit('/admin')
-        cy.get(`${controls.emailField}`).type(`${creds[0].email}`)
-        cy.get(`${controls.passwordField}`).type(`${creds[0].password}`)
-        cy.get(`${controls.submitButton}`).click()
+        cy.get(`${adminPage.emailField}`).type(`${creds[0].email}`)
+        cy.get(`${adminPage.passwordField}`).type(`${creds[0].password}`)
+        cy.get(`${adminPage.submitButton}`).click()
 
-        let hall = cy.get("ul.conf-step__selectors-box > :nth-child(7) > span")
-        console.log(`hall = ${hall}`)
+        cy.get(`${adminPage.movieName}`).then(item => item.textContent).should('have.text', 'Логан')
+        cy.get(`${adminPage.movieName}`).invoke('text').then(text => {
+            cy.visit("/")
+            cy.get(`${userPage.dayNav}`).click()
+            cy.get(`${userPage.movieTitle}`).should('have.text', text);
+            cy.get(`${userPage.movieTime}`).click()
+            cy.get(`.buying-scheme__wrapper > :nth-child(${seats.row}) > :nth-child(${seats.seat})`).click()
+            cy.get(`${userPage.orderButton}`).click()
+            cy.get(`${userPage.ticketStatus}`).should('have.text', 'Вы выбрали билеты:')
+        })
     })
 })

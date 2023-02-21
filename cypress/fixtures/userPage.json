@@ -1,7 +1,7 @@
 {
     "dayNav": ".page-nav__day:last-child",
     "movieTitle": ":nth-child(2) > .movie__info > .movie__description > .movie__title",
-    "movieTime": ":nth-child(2) > .movie-seances__hall > .movie-seances__list > .movie-seances__time-block > .movie-seances__time",
+    "movieTime": "[data-seance-id='139']",
     "orderButton": ".acceptin-button",
     "ticketStatus": ".ticket__check-title"
 }
